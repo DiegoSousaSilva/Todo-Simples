@@ -45,7 +45,11 @@ class TodoContainer extends React.Component{
         title: "PHP",
         completed:false
       },  
-
+      {
+        id: uuidv4(),
+        title: "Java",
+        completed:false
+      },
     ]
   };
 
