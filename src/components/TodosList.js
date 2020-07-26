@@ -1,23 +1,23 @@
 import React, { Component } from 'react';
 import TodoItem from './TodoItem';
 
-class TodoList extends Component{
-  render(){
+const TodoList = props =>{
+
     return(
       <div>
       {
-        this.props.todos.map(todo =>(
+        props.todos.map(todo =>(
           <TodoItem 
             key={todo.id} 
             todo={todo}  
-            handleChangeProps={this.props.handleChangeProps}
-            deleteTodoProps={this.props.deleteTodoProps}
+            handleChangeProps={props.handleChangeProps}
+            deleteTodoProps={props.deleteTodoProps}
           />
         ))
       }
     </div>
     )
-  }
+  
 }
 
 export default TodoList;

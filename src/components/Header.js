@@ -1,16 +1,39 @@
-import React from 'react';
+import React, {useEffect, useRef} from "react"
 
-const Header = ()=>{
+const Header = props => {
+  const headerStyle = {
+    padding: "20px 0",
+    lineHeight: "2em",
+  }
 
-  return(
-    <header>
-      <h1 style={{ fontSize: "25px", marginBottom: "15px"}}>Simple Todo App</h1>
-      <p style={{fontWeight:"bold",fontSize: "19px"}}>This project was adapted from <a href='https://ibaslogic.com/blog/react-tutorial-for-beginners'>https://ibaslogic.com/blog/react-tutorial-for-beginners/</a></p>
-    </header>  
+  const isInitialMount = useRef(true)
+
+  useEffect(() => {
+    var x = Math.floor(Math.random() * 256)
+    var y = Math.floor(Math.random() * 256)
+    var z = Math.floor(Math.random() * 256)
+    var bgColor = "rgb(" + x + "," + y + "," + z + ")"
+  
+    if (isInitialMount.current) {
+      isInitialMount.current = false;
+    } else {
+      document.getElementById("inH1").innerHTML = "clicked";
+      document.getElementById("inH1").style.backgroundColor = bgColor;
+    }
+  }, [props.headerSpan])
+
+  return (
+    <header style={headerStyle}>
+      <h1 style={{ fontSize: "25px", marginBottom: "15px" }}>
+        Simple Todo App <span id="inH1"></span>
+      </h1>
+      <p style={{ fontSize: "19px" }}>
+        Please add to-dos item(s) through the input field
+      </p>
+      <p>This project was adapted from <a href="https://ibaslogic.com/blog/react-tutorial-for-beginners/"> https://ibaslogic.com/blog/react-tutorial-for-beginners/</a></p>
+    </header>
   )
 }
 
-const headerStyle = {
+export default Header
 
-}  
-export default Header;
