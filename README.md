@@ -1,4 +1,4 @@
-This project was adapted from [](https://ibaslogic.com/blog/react-tutorial-for-beginners/)
+This project was adapted from [https://ibaslogic.com/blog/react-tutorial-for-beginners/](https://ibaslogic.com/blog/react-tutorial-for-beginners/)
 
 ## Simple Todo App
 
@@ -10,4 +10,6 @@ It is a simple project, which lists `to-do` items using a public API located at 
 With React `Hooks` you can use a state and manage the class-based lifecycle logic within the function components. With that you can write a more readable, concise and clear code.
 more in [https://pt-br.reactjs.org/docs/hooks-intro.html](https://pt-br.reactjs.org/docs/hooks-intro.html).
 
-### `Diego Dev`
+See the full tutorial at [https://ibaslogic.com/blog/react-tutorial-for-beginners/](https://ibaslogic.com/blog/react-tutorial-for-beginners/)
+
+
