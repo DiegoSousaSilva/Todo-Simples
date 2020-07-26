@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 import { v4 as uuidv4 } from "uuid";
 
@@ -9,48 +10,7 @@ import InputTodo from './InputTodo';
 class TodoContainer extends React.Component{
 
   state = {
-    todos:[
-      {
-        id: uuidv4(),
-        title: "NodeJs",
-        completed:true
-      },
-      {
-        id: uuidv4(),
-        title: "ReactJs",
-        completed:true
-      },
-      {
-        id: uuidv4(),
-        title: "React Native",
-        completed:false
-      }, 
-      {
-        id: uuidv4(),
-        title: "Javascript",
-        completed:false
-      },       
-      {
-        id: uuidv4(),
-        title: "Html5",
-        completed:true
-      }, 
-      {
-        id: uuidv4(),
-        title: "CSS3",
-        completed:true
-      },
-      {
-        id: uuidv4(),
-        title: "PHP",
-        completed:false
-      },  
-      {
-        id: uuidv4(),
-        title: "Java",
-        completed:false
-      },
-    ]
+    todos:[]
   };
 
   handleChange= id =>{
@@ -85,7 +45,13 @@ class TodoContainer extends React.Component{
     })
   }
 
+  componentDidMount() {
+    axios.get("https://jsonplaceholder.typicode.com/todos?_limit=10")
+      .then(response => this.setState({ todos: response.data }));
+  }
+
   render(){
+
 
     return(
       <div className="container">
@@ -101,9 +67,7 @@ class TodoContainer extends React.Component{
       </div>
     )
   }
-
-
-
 }
 
 export default TodoContainer;
+
